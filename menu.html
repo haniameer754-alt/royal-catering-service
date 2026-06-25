@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+ <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+        }
+
+        /* Navbar */
+        nav{
+            background:#333;
+            color:white;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 25px;
+            position:sticky;
+            top:0;
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+        }
+
+        .nav-links{
+            list-style:none;
+            display:flex;
+        }
+
+        .nav-links li{
+            margin-left:20px;
+        }
+
+        .nav-links a{
+            color:white;
+            text-decoration:none;
+        }
+
+        .nav-links a:hover{
+            color:orange;
+        }
+
+        .menu-toggle{
+            display:none;
+            font-size:30px;
+            cursor:pointer;
+        }
+
+        /* Menu Section */
+        .menu-container{
+            max-width:1100px;
+            margin:50px auto;
+            padding:20px;
+            text-align:center;
+        }
+
+        .menu-container h1{
+            margin-bottom:10px;
+            color:#333;
+        }
+
+        .menu-container p{
+            margin-bottom:30px;
+            color:#666;
+        }
+
+        .menu-section{
+            margin-bottom:40px;
+        }
+
+        .menu-section h2{
+            color:orange;
+            margin-bottom:20px;
+        }
+
+        .menu-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+            gap:20px;
+        }
+
+        .menu-card{
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.15);
+            transition:0.3s;
+        }
+
+        .menu-card:hover{
+            transform:translateY(-5px);
+        }
+
+        .menu-card h3{
+            margin-bottom:10px;
+            color:#333;
+        }
+
+        .price{
+            color:green;
+            font-weight:bold;
+            margin-top:10px;
+        }
+footer{
+    background:#222;
+    color:white;
+    margin-top:60px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:50px 20px;
+}
+
+.footer-section h3{
+    color:orange;
+    margin-bottom:20px;
+}
+
+.footer-section p{
+    line-height:1.8;
+    color:#ddd;
+}
+
+.footer-section ul{
+    list-style:none;
+}
+
+.footer-section ul li{
+    margin-bottom:10px;
+}
+
+.footer-section ul li a{
+    color:#ddd;
+    text-decoration:none;
+}
+
+.footer-section ul li a:hover{
+    color:orange;
+}
+
+.whatsapp-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 18px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.whatsapp-btn:hover{
+    background:#1ebe5d;
+}
+
+.footer-section iframe{
+    width:100%;
+    height:180px;
+    border:none;
+    border-radius:10px;
+}
+
+.footer-bottom{
+    text-align:center;
+    background:#111;
+    padding:20px;
+    font-size:14px;
+    color:#bbb;
+}
+        /* Responsive Navbar */
+        @media(max-width:768px){
+
+            .menu-toggle{
+                display:block;
+            }
+
+            .nav-links{
+                display:none;
+                flex-direction:column;
+                position:absolute;
+                top:70px;
+                left:0;
+                width:100%;
+                background:#333;
+            }
+
+            .nav-links.active{
+                display:flex;
+            }
+
+            .nav-links li{
+                text-align:center;
+                margin:15px 0;
+            }
+        }
+
+        footer{
+            background:#333;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:40px;
+        }
+    </style>
+<body>
+     <nav>
+        <div class="logo">Royal Feast</div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Menu Section -->
+    <div class="menu-container">
+
+        <h1>Our Delicious Menu</h1>
+        <p>We offer a wide variety of fresh and tasty dishes for every event.</p>
+
+        <!-- Starters -->
+        <div class="menu-section">
+            <h2>Starters</h2>
+
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="/images/chicken spring rolls.png"  width="300" height="200" border-radius:10px>
+                    <h3>Chicken Spring Rolls</h3>
+                    <p>Crispy fried rolls filled with chicken.</p>
+                    <div class="price">Rs. 350</div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="/images/samosa.png"  width="300" height="200" border-radius:10px>
+                    <h3>Vegetable Samosa</h3>
+                    <p>Golden crispy samosas with spicy filling.</p>
+                    <div class="price">Rs. 200</div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="/images/soap.png"  width="300" height="200" border-radius:10px>
+                    <h3>Chicken Soup</h3>
+                    <p>Hot and fresh chicken soup with herbs.</p>
+                    <div class="price">Rs. 300</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Main Course -->
+        <div class="menu-section">
+            <h2>Main Course</h2>
+
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="/images/biryani.png"  width="300" height="200"  border-radius:10px>
+                    <h3>Chicken Biryani</h3>
+                    <p>Spicy rice with tender chicken pieces.</p>
+                    <div class="price">Rs. 500</div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="/images/mutton.png"  width="300" height="200" border-radius:10px>
+                    <h3>Mutton Karahi</h3>
+                    <p>Traditional spicy mutton dish.</p>
+                    <div class="price">Rs. 1200</div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="/images/chicken handi.png "  width="300" height="200"  border-radius:10px>
+                    <h3>Chicken Handi</h3>
+                    <p>Creamy and rich chicken curry.</p>
+                    <div class="price">Rs. 900</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Desserts -->
+        <div class="menu-section">
+            <h2>Desserts</h2>
+
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="/images/gulab jamun.png "  width="300" height="200" border-radius:10px>
+                    <h3>Gulab Jamun</h3>
+                    <p>Sweet traditional dessert balls.</p>
+                    <div class="price">Rs. 250</div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="/images/kheer.png"  width="300" height="200"  border-radius:10px>
+                    <h3>Kheer</h3>
+                    <p>Rice pudding with milk and nuts.</p>
+                    <div class="price">Rs. 300</div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="/images/chocalate cake.png "  width="300" height="200" border-radius:10px>
+                    <h3>Chocolate Cake</h3>
+                    <p>Soft and creamy chocolate cake.</p>
+                    <div class="price">Rs. 400</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Drinks -->
+        <div class="menu-section">
+            <h2>Drinks</h2>
+
+            <div class="menu-grid">
+
+                <div class="menu-card">
+                    <img src="/images/fresh juice.png "  width="300" height="200" border-radius:10px>
+                    <h3>Fresh Juice</h3>
+                    <p>Seasonal fresh fruit juice.</p>
+                    <div class="price">Rs. 250</div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="/images/soft drinks.png "  width="300" height="200" border-radius:10px>
+                    <h3>Soft Drinks</h3>
+                    <p>Cold refreshing beverages.</p>
+                    <div class="price">Rs. 150</div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="/images/tea.png" width="300" height="200" border-radius:10px>
+                    <h3>Tea / Coffee</h3>
+                    <p>Hot tea and coffee options.</p>
+                    <div class="price">Rs. 120</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu(){
+            document.getElementById("navLinks")
+            .classList.toggle("active");
+        }
+    </script>
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Company Info -->
+        <div class="footer-section">
+            <h3>Royal Feast Catering</h3>
+
+            <p>
+                Making Every Celebration Delicious.
+                We provide premium catering services for weddings,
+                birthdays, corporate events and family gatherings.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="booking.html">Booking</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+
+            <p>📍 Lahore, Pakistan</p>
+            <p>📞 +92 300 1234567</p>
+            <p>📧 info@royalfeast.com</p>
+
+            <a href="https://wa.me/923001234567"
+               target="_blank"
+               class="whatsapp-btn">
+                💬 Chat on WhatsApp
+            </a>
+        </div>
+
+        <!-- Google Map -->
+        <div class="footer-section">
+            <h3>Our Location</h3>
+
+            <iframe
+                src="https://www.google.com/maps?q=Lahore,Pakistan&output=embed"
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Royal Feast Catering Services |
+        </p>
+
+    </div>
+
+</footer>
+</body>
+</html>

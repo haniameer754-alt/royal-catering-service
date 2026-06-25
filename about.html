@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            line-height:1.6;
+            background:#f9f9f9;
+        }
+
+        /* Navbar */
+        nav{
+            background:#333;
+            color:white;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 25px;
+            position:sticky;
+            top:0;
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+        }
+
+        .nav-links{
+            list-style:none;
+            display:flex;
+        }
+
+        .nav-links li{
+            margin-left:20px;
+        }
+
+        .nav-links a{
+            color:white;
+            text-decoration:none;
+        }
+
+        .nav-links a:hover{
+            color:orange;
+        }
+
+        .menu-toggle{
+            display:none;
+            font-size:30px;
+            cursor:pointer;
+        }
+
+        /* About Section */
+        .about{
+            max-width:1000px;
+            margin:50px auto;
+            padding:20px;
+        }
+
+        .about h1{
+            text-align:center;
+            margin-bottom:30px;
+            color:#333;
+        }
+
+        .about-card{
+            background:white;
+            padding:30px;
+            margin-bottom:25px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .about-card h2{
+            color:orange;
+            margin-bottom:15px;
+        }
+
+        .about-card p{
+            color:#555;
+        }
+
+        /* Team Section */
+        .team{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+            margin-top:30px;
+        }
+
+        .team-member{
+            background:white;
+            width:250px;
+            padding:20px;
+            text-align:center;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .team-member h3{
+            margin:10px 0;
+        }
+        .team-member img{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        /* Footer */
+        footer{
+            background:#333;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:40px;
+        }
+.footer{
+    background:#222;
+    color:white;
+    margin-top:60px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:50px 20px;
+}
+
+.footer-section h3{
+    color:orange;
+    margin-bottom:20px;
+}
+
+.footer-section p{
+    line-height:1.8;
+    color:#ddd;
+}
+
+.footer-section ul{
+    list-style:none;
+}
+
+.footer-section ul li{
+    margin-bottom:10px;
+}
+
+.footer-section ul li a{
+    color:#ddd;
+    text-decoration:none;
+}
+
+.footer-section ul li a:hover{
+    color:orange;
+}
+
+.whatsapp-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 18px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.whatsapp-btn:hover{
+    background:#1ebe5d;
+}
+
+.footer-section iframe{
+    width:100%;
+    height:180px;
+    border:none;
+    border-radius:10px;
+}
+
+.footer-bottom{
+    text-align:center;
+    background:#111;
+    padding:20px;
+    font-size:14px;
+    color:#bbb;
+}
+        /* Responsive */
+        @media(max-width:768px){
+
+            .menu-toggle{
+                display:block;
+            }
+
+            .nav-links{
+                display:none;
+                flex-direction:column;
+                position:absolute;
+                top:70px;
+                left:0;
+                width:100%;
+                background:#333;
+            }
+
+            .nav-links.active{
+                display:flex;
+            }
+
+            .nav-links li{
+                text-align:center;
+                margin:15px 0;
+            }
+        }
+</style>
+<body>
+      <nav>
+        <div class="logo">Royal Feast</div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Us -->
+    <section class="about">
+
+        <h1>About Royal Feast Catering Services</h1>
+
+        <div class="about-card">
+            <h2>Our Story</h2>
+
+            <p>
+                Royal Feast Catering Services was established with the vision
+                of making every celebration special through delicious food
+                and exceptional hospitality. We believe that great food
+                brings people together and creates unforgettable memories.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h2>Our Mission</h2>
+
+            <p>
+                Our mission is to provide outstanding catering services by
+                offering fresh ingredients, creative menus, and professional
+                customer service that exceeds expectations.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h2>Our Vision</h2>
+
+            <p>
+                We aim to become one of the most trusted catering service
+                providers by delivering quality, reliability, and excellence
+                at every event.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h2>Meet Our Team</h2>
+
+            <div class="team">
+
+                <div class="team-member">
+                    <img src="/images/ahmed.png">
+                    <h3>Ahmed Ali</h3>
+                    <p>Head Chef</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="/images/fatima.png">
+                    <h3>Fatima Noor</h3>
+                    <p>Event Coordinator</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="/images/usman.png">
+                    <h3>Usman Khan</h3>
+                    <p>Service Manager</p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks")
+                    .classList.toggle("active");
+        }
+    </script>
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Company Info -->
+        <div class="footer-section">
+            <h3>Royal Feast Catering</h3>
+
+            <p>
+                Making Every Celebration Delicious.
+                We provide premium catering services for weddings,
+                birthdays, corporate events and family gatherings.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="booking.html">Booking</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+
+            <p>📍 Lahore, Pakistan</p>
+            <p>📞 +92 300 1234567</p>
+            <p>📧 info@royalfeast.com</p>
+
+            <a href="https://wa.me/923001234567"
+               target="_blank"
+               class="whatsapp-btn">
+                💬 Chat on WhatsApp
+            </a>
+        </div>
+
+        <!-- Google Map -->
+        <div class="footer-section">
+            <h3>Our Location</h3>
+
+            <iframe
+                src="https://www.google.com/maps?q=Lahore,Pakistan&output=embed"
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Royal Feast Catering Services |
+        </p>
+
+    </div>
+
+</footer>
+</body>
+</html>

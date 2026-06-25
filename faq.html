@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+</head>
+  <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+        }
+
+        /* Navbar */
+        nav{
+            background:#333;
+            color:white;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 25px;
+            position:sticky;
+            top:0;
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+        }
+
+        .nav-links{
+            list-style:none;
+            display:flex;
+        }
+
+        .nav-links li{
+            margin-left:20px;
+        }
+
+        .nav-links a{
+            color:white;
+            text-decoration:none;
+        }
+
+        .nav-links a:hover{
+            color:orange;
+        }
+
+        .menu-toggle{
+            display:none;
+            font-size:30px;
+            cursor:pointer;
+        }
+
+        /* FAQ Section */
+        .faq-container{
+            max-width:800px;
+            margin:50px auto;
+            padding:20px;
+        }
+
+        .faq-container h1{
+            text-align:center;
+            margin-bottom:30px;
+            color:#333;
+        }
+
+        .faq-item{
+            background:white;
+            margin-bottom:10px;
+            border-radius:8px;
+            box-shadow:0 0 8px rgba(0,0,0,0.1);
+            overflow:hidden;
+        }
+
+        .faq-question{
+            padding:15px;
+            cursor:pointer;
+            background:#fff;
+            font-weight:bold;
+            display:flex;
+            justify-content:space-between;
+        }
+
+        .faq-question:hover{
+            background:#f0f0f0;
+        }
+
+        .faq-answer{
+            max-height:0;
+            overflow:hidden;
+            transition:max-height 0.3s ease;
+            padding:0 15px;
+            background:#fafafa;
+        }
+
+        .faq-answer p{
+            padding:15px 0;
+            color:#555;
+        }
+
+        .faq-item.active .faq-answer{
+            max-height:200px;
+        }
+  footer{
+    background:#222;
+    color:white;
+    margin-top:60px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:50px 20px;
+}
+
+.footer-section h3{
+    color:orange;
+    margin-bottom:20px;
+}
+
+.footer-section p{
+    line-height:1.8;
+    color:#ddd;
+}
+
+.footer-section ul{
+    list-style:none;
+}
+
+.footer-section ul li{
+    margin-bottom:10px;
+}
+
+.footer-section ul li a{
+    color:#ddd;
+    text-decoration:none;
+}
+
+.footer-section ul li a:hover{
+    color:orange;
+}
+
+.whatsapp-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 18px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.whatsapp-btn:hover{
+    background:#1ebe5d;
+}
+
+.footer-section iframe{
+    width:100%;
+    height:180px;
+    border:none;
+    border-radius:10px;
+}
+
+.footer-bottom{
+    text-align:center;
+    background:#111;
+    padding:20px;
+    font-size:14px;
+    color:#bbb;
+}
+        /* Navbar responsive */
+        @media(max-width:768px){
+
+            .menu-toggle{
+                display:block;
+            }
+
+            .nav-links{
+                display:none;
+                flex-direction:column;
+                position:absolute;
+                top:70px;
+                left:0;
+                width:100%;
+                background:#333;
+            }
+
+            .nav-links.active{
+                display:flex;
+            }
+
+            .nav-links li{
+                text-align:center;
+                margin:15px 0;
+            }
+        }
+    </style>
+<body>
+     <nav>
+        <div class="logo">Royal Feast</div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <!-- FAQ Section -->
+    <div class="faq-container">
+
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                How do I book a catering service?
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <p>You can book our services through the Booking page by filling out the form with your event details.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Do you provide customized menus?
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, we offer fully customized menus according to your event type and preferences.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                What is your cancellation policy?
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Cancellations made 72 hours before the event are eligible for partial refund.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Do you handle large events?
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, we specialize in both small and large-scale events including weddings and corporate functions.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+       <!-- Quick Links -->
+       <footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Company Info -->
+        <div class="footer-section">
+            <h3>Royal Feast Catering</h3>
+
+            <p>
+                Making Every Celebration Delicious.
+                We provide premium catering services for weddings,
+                birthdays, corporate events and family gatherings.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="booking.html">Booking</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+
+            <p>📍 Lahore, Pakistan</p>
+            <p>📞 +92 300 1234567</p>
+            <p>📧 info@royalfeast.com</p>
+
+            <a href="https://wa.me/923001234567"
+               target="_blank"
+               class="whatsapp-btn">
+                💬 Chat on WhatsApp
+            </a>
+        </div>
+
+        <!-- Google Map -->
+        <div class="footer-section">
+            <h3>Our Location</h3>
+
+            <iframe
+                src="https://www.google.com/maps?q=Lahore,Pakistan&output=embed"
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Royal Feast Catering Services |
+        </p>
+
+    </div>
+
+</footer>
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu(){
+            document.getElementById("navLinks")
+            .classList.toggle("active");
+        }
+
+        function toggleFAQ(element){
+            let item = element.parentElement;
+            item.classList.toggle("active");
+        }
+    </script>
+</div>
+</footer>
+</body>
+</html>

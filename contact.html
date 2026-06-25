@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+        }
+
+        /* Navbar */
+        nav{
+            background:#333;
+            color:white;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 25px;
+            position:sticky;
+            top:0;
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+        }
+
+        .nav-links{
+            list-style:none;
+            display:flex;
+        }
+
+        .nav-links li{
+            margin-left:20px;
+        }
+
+        .nav-links a{
+            color:white;
+            text-decoration:none;
+        }
+
+        .nav-links a:hover{
+            color:orange;
+        }
+
+        .menu-toggle{
+            display:none;
+            font-size:30px;
+            cursor:pointer;
+        }
+
+        /* Contact Section */
+        .contact-container{
+            max-width:900px;
+            margin:50px auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .contact-container h1{
+            text-align:center;
+            margin-bottom:10px;
+            color:#333;
+        }
+
+        .contact-info{
+            text-align:center;
+            margin-bottom:30px;
+            color:#555;
+        }
+
+        .info-box{
+            display:flex;
+            justify-content:space-around;
+            flex-wrap:wrap;
+            margin:20px 0;
+        }
+
+        .info{
+            width:250px;
+            background:#f9f9f9;
+            padding:15px;
+            margin:10px;
+            border-radius:8px;
+        }
+
+        .info h3{
+            color:orange;
+            margin-bottom:10px;
+        }
+
+        /* Form */
+        form{
+            margin-top:20px;
+        }
+
+        .form-group{
+            margin-bottom:15px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:5px;
+            font-weight:bold;
+        }
+
+        input, textarea{
+            width:100%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+
+        textarea{
+            resize:vertical;
+        }
+
+        .btn{
+            width:100%;
+            padding:12px;
+            background:orange;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        .btn:hover{
+            background:darkorange;
+        }
+
+        #msg{
+            text-align:center;
+            margin-top:15px;
+            font-weight:bold;
+        }
+  .footer{
+    background:#222;
+    color:white;
+    margin-top:60px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:50px 20px;
+}
+
+.footer-section h3{
+    color:orange;
+    margin-bottom:20px;
+}
+
+.footer-section p{
+    line-height:1.8;
+    color:#ddd;
+}
+
+.footer-section ul{
+    list-style:none;
+}
+
+.footer-section ul li{
+    margin-bottom:10px;
+}
+
+.footer-section ul li a{
+    color:#ddd;
+    text-decoration:none;
+}
+
+.footer-section ul li a:hover{
+    color:orange;
+}
+
+.whatsapp-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 18px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.whatsapp-btn:hover{
+    background:#1ebe5d;
+}
+
+.footer-section iframe{
+    width:100%;
+    height:180px;
+    border:none;
+    border-radius:10px;
+}
+
+.footer-bottom{
+    text-align:center;
+    background:#111;
+    padding:20px;
+    font-size:14px;
+    color:#bbb;
+}
+        /* Responsive */
+        @media(max-width:768px){
+
+            .menu-toggle{
+                display:block;
+            }
+
+            .nav-links{
+                display:none;
+                flex-direction:column;
+                position:absolute;
+                top:70px;
+                left:0;
+                width:100%;
+                background:#333;
+            }
+
+            .nav-links.active{
+                display:flex;
+            }
+
+            .nav-links li{
+                text-align:center;
+                margin:15px 0;
+            }
+
+            .contact-container{
+                margin:30px 15px;
+            }
+        }
+
+        footer{
+            background:#333;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:40px;
+        }
+    </style>
+<body>
+      <nav>
+        <div class="logo">Royal Feast</div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contact Section -->
+    <div class="contact-container">
+
+        <h1>Contact Us</h1>
+
+        <p class="contact-info">
+            We are here to help you plan your perfect event.
+            Feel free to contact us anytime.
+        </p>
+
+        <div class="info-box">
+
+            <div class="info">
+                <h3>Address</h3>
+                <p>Main Boulevard, Lahore, Pakistan</p>
+            </div>
+
+            <div class="info">
+                <h3>Phone</h3>
+                <p>+92 300 1234567</p>
+            </div>
+
+            <div class="info">
+                <h3>Email</h3>
+                <p>info@royalfeast.com</p>
+            </div>
+
+            </div>
+        <!-- Contact Form -->
+        <form id="contactForm">
+
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" id="name" placeholder="Your Name">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="Your Email">
+            </div>
+
+            <div class="form-group">
+                <label>Subject</label>
+                <input type="text" id="subject" placeholder="Subject">
+            </div>
+
+            <div class="form-group">
+                <label>Message</label>
+                <textarea id="message" rows="5" placeholder="Write your message"></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    
+        <p id="msg"></p>
+
+</div>
+    <script>
+        function toggleMenu(){
+            document.getElementById("navLinks")
+            .classList.toggle("active");
+        }
+
+        document.getElementById("contactForm")
+        .addEventListener("submit", function(e){
+            e.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let subject = document.getElementById("subject").value.trim();
+            let message = document.getElementById("message").value.trim();
+            let msg = document.getElementById("msg");
+
+            if(name === "" || email === "" || subject === "" || message === ""){
+                msg.style.color = "red";
+                msg.innerHTML = "Please fill all fields.";
+                return;
+            }
+
+            msg.style.color = "green";
+            msg.innerHTML = "Message sent successfully! We will contact you soon.";
+
+            document.getElementById("contactForm").reset();
+        });
+    </script>
+    <footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Company Info -->
+        <div class="footer-section">
+            <h3>Royal Feast Catering</h3>
+
+            <p>
+                Making Every Celebration Delicious.
+                We provide premium catering services for weddings,
+                birthdays, corporate events and family gatherings.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="booking.html">Booking</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+
+            <p>📍 Lahore, Pakistan</p>
+            <p>📞 +92 300 1234567</p>
+            <p>📧 info@royalfeast.com</p>
+
+            <a href="https://wa.me/923001234567"
+               target="_blank"
+               class="whatsapp-btn">
+                💬 Chat on WhatsApp
+            </a>
+        </div>
+
+        <!-- Google Map -->
+        <div class="footer-section">
+            <h3>Our Location</h3>
+
+            <iframe
+                src="https://www.google.com/maps?q=Lahore,Pakistan&output=embed"
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Royal Feast Catering Services |
+        </p>
+    </div>
+    </footer>
+</body>
+</html>

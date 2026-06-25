@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Feast Catering Services</title>
+</head>
+<style>
+      *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            line-height:1.6;
+        }
+
+        /* Navbar */
+        nav{
+            background:#333;
+            color:white;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 25px;
+            position:sticky;
+            top:0;
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+        }
+
+        .nav-links{
+            list-style:none;
+            display:flex;
+        }
+
+        .nav-links li{
+            margin-left:20px;
+        }
+
+        .nav-links a{
+            color:white;
+            text-decoration:none;
+            font-size:16px;
+        }
+
+        .nav-links a:hover{
+            color:orange;
+        }
+
+        /* Toggle Button */
+        .menu-toggle{
+            display:none;
+            font-size:30px;
+            cursor:pointer;
+        }
+        .logo-container{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 10px;
+        }
+        .logo-img{
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+        }
+        /* Hero Section */
+        .hero{
+            background:url("https://images.unsplash.com/photo-1555244162-803834f70033?w=1200") center/cover no-repeat;
+            height:80vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+        }
+
+        .hero-content{
+            background:rgba(0,0,0,0.6);
+            padding:30px;
+            border-radius:10px;
+            max-width:700px;
+        }
+
+        .hero h1{
+            font-size:42px;
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            margin-bottom:20px;
+        }
+
+        .btn{
+            display:inline-block;
+            background:orange;
+            color:white;
+            padding:12px 25px;
+            text-decoration:none;
+            border-radius:5px;
+        }
+
+        .btn:hover{
+            background:darkorange;
+        }
+
+        /* Features */
+        .features{
+            padding:50px 20px;
+            text-align:center;
+        }
+
+        .features h2{
+            margin-bottom:30px;
+        }
+
+        .feature-box{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .card{
+            width:280px;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+        }
+
+        /* Testimonial */
+        .testimonial{
+            background:#f4f4f4;
+            padding:50px 20px;
+            text-align:center;
+        }
+
+        .testimonial blockquote{
+            font-style:italic;
+            margin:20px auto;
+            max-width:600px;
+        }
+.packages{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.package-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.package-card{
+    width:250px;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.package-card h4{
+    color:orange;
+    margin-top:15px;
+}
+.stats{
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    background:#333;
+    color:white;
+    padding:50px 20px;
+    text-align:center;
+}
+
+.stats h2{
+    color:orange;
+    font-size:40px;
+}
+.cta{
+    background:orange;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.cta-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:white;
+    color:orange;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+.home-gallery{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.gallery-preview{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.gallery-preview img{
+    width:300px;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+}
+footer{
+    background:#222;
+    color:white;
+    margin-top:60px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:50px 20px;
+}
+
+.footer-section h3{
+    color:orange;
+    margin-bottom:20px;
+}
+
+.footer-section p{
+    line-height:1.8;
+    color:#ddd;
+}
+
+.footer-section ul{
+    list-style:none;
+}
+
+.footer-section ul li{
+    margin-bottom:10px;
+}
+
+.footer-section ul li a{
+    color:#ddd;
+    text-decoration:none;
+}
+
+.footer-section ul li a:hover{
+    color:orange;
+}
+
+.whatsapp-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 18px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.whatsapp-btn:hover{
+    background:#1ebe5d;
+}
+
+.footer-section iframe{
+    width:100%;
+    height:180px;
+    border:none;
+    border-radius:10px;
+}
+
+.footer-bottom{
+    text-align:center;
+    background:#111;
+    padding:20px;
+    font-size:14px;
+    color:#bbb;
+}
+        /* Responsive Design */
+        @media(max-width:768px){
+
+            .menu-toggle{
+                display:block;
+            }
+
+            .nav-links{
+                display:none;
+                flex-direction:column;
+                width:100%;
+                position:absolute;
+                top:70px;
+                left:0;
+                background:#333;
+            }
+
+            .nav-links.active{
+                display:flex;
+            }
+
+            .nav-links li{
+                text-align:center;
+                margin:15px 0;
+            }
+
+            .hero h1{
+                font-size:30px;
+            }
+        }
+
+</style>
+<body>
+    <nav class="nav-links">
+        <a href="#" class="logo-container">
+            <img src="/images/logo.png" alt="logo" class="logo-img"></a>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+        </nav>
+
+         <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Royal Feast Catering Services</h1>
+            <p>
+                Making Every Celebration Delicious.
+                We provide exceptional catering services
+                for weddings, birthdays, corporate events,
+                and family gatherings. Our commitment to
+                quality food and excellent service makes
+                every event memorable.
+            </p>
+              <a href="booking.html" class="btn">
+                Book Now
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="features">
+
+        <h2>Why Choose Us?</h2>
+
+        <div class="feature-box">
+
+            <div class="card">
+                <h3>Experienced Staff</h3>
+                <p>
+                    Professional chefs and trained serving
+                    staff dedicated to making your event successful.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Fresh Ingredients</h3>
+                <p>
+                    We use fresh, hygienic, and high-quality
+                    ingredients to prepare every meal.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Affordable Packages</h3>
+                <p>
+                    Customized catering packages suitable
+                    for different budgets and event sizes.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Customer Review -->
+    <section class="testimonial">
+
+        <h2>Customer Review</h2>
+
+        <blockquote>
+            "Royal Feast made our wedding unforgettable.
+            The food was delicious and the staff provided
+            outstanding service."
+        </blockquote>
+
+        <p><strong>– Sarah Khan</strong></p>
+
+        <section class="packages">
+    <h2>Our Event Packages</h2>
+<br>
+    <div class="package-container">
+
+        <div class="package-card">
+            <h3>Silver Package</h3>
+            <p>Up to 50 Guests</p>
+            <h4>Rs. 25,000</h4>
+        </div>
+
+        <div class="package-card">
+            <h3>Gold Package</h3>
+            <p>Up to 100 Guests</p>
+            <h4>Rs. 50,000</h4>
+        </div>
+
+        <div class="package-card">
+            <h3>Platinum Package</h3>
+            <p>Up to 200 Guests</p>
+            <h4>Rs. 90,000</h4>
+        </div>
+
+    </div>
+</section>
+<section class="stats">
+
+    <div>
+        <h2>500+</h2>
+        <p>Events Completed</p>
+    </div>
+
+    <div>
+        <h2>1000+</h2>
+        <p>Happy Customers</p>
+    </div>
+
+    <div>
+        <h2>25+</h2>
+        <p>Professional Staff</p>
+    </div>
+
+    <div>
+        <h2>5+</h2>
+        <p>Years Experience</p>
+    </div>
+
+</section>
+
+<section class="cta">
+
+    <h2>Ready To Make Your Event Special?</h2>
+
+    <p>
+        Book our catering services today and make your celebration unforgettable.
+    </p>
+
+    <a href="booking.html" class="cta-btn">
+        Reserve Now
+    </a>
+
+</section>
+<section class="home-gallery">
+
+    <h2>Memorable Moments</h2>
+
+    <div class="gallery-preview">
+
+        <img src="/images/mutton.png">
+        <img src="/images/biryani.png">
+        <img src="/images/fresh juice.png">
+
+    </div>
+
+</section>
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks")
+                    .classList.toggle("active");
+        }
+    </script>
+    <footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Company Info -->
+        <div class="footer-section">
+            <h3>Royal Feast Catering</h3>
+
+            <p>
+                Making Every Celebration Delicious.
+                We provide premium catering services for weddings,
+                birthdays, corporate events and family gatherings.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="booking.html">Booking</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+
+            <p>📍 Lahore, Pakistan</p>
+            <p>📞 +92 300 1234567</p>
+            <p>📧 info@royalfeast.com</p>
+
+            <a href="https://wa.me/923001234567"
+               target="_blank"
+               class="whatsapp-btn">
+                💬 Chat on WhatsApp
+            </a>
+        </div>
+
+        <!-- Google Map -->
+        <div class="footer-section">
+            <h3>Our Location</h3>
+
+            <iframe
+                src="https://www.google.com/maps?q=Lahore,Pakistan&output=embed"
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Royal Feast Catering Services |
+        </p>
+
+    </div>
+
+</footer>
+</body>
+</html>
